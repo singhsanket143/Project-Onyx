@@ -1,0 +1,58 @@
+@tailwind utilities;
+/**
+ * FILEPATH: /Users/sanketsingh/Developer/Project_Onyx/styles.css
+ * 
+ * This CSS file contains styles for the body, pre element, and a specific class ".dark".
+ * It defines background gradients, scroll bar styles, and color/background properties.
+ * 
+ * CSS Rules:
+ * 
+ * 1. body:
+ *    - Sets a linear gradient background from transparent to white, with a height of 300px.
+ *    - Applies radial gradients to create a checkerboard pattern.
+ * 
+ * 2. .dark body:
+ *    - Sets a linear gradient background from transparent to black, with a height of 300px.
+ *    - Applies radial gradients to create a checkerboard pattern.
+ * 
+ * 3. pre::-webkit-scrollbar:
+ *    - Hides the scroll bar for the pre element.
+ * 
+ * 4. pre:
+ *    - Hides the scroll bar for the pre element in Microsoft browsers.
+ * 
+ * 5. .dark .nextra-container .nextra-sidebar ul li.active > a:
+ *    - Sets the color and background properties for the active link in a specific class hierarchy.
+ * 
+ */
+
+body {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 300px
+      ),
+      fixed 0 0 / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0),
+      fixed 10px 10px / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0);
+  }
+  
+  .dark body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 300px),
+      fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+      fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+  }
+  
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+  
+  pre {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .dark .nextra-container .nextra-sidebar ul li.active > a {
+    color: #fff7ba !important;
+    background: #f7df1e1c !important;
+  }
+  
