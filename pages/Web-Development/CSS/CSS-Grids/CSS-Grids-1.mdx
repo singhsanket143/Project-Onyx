@@ -178,3 +178,74 @@ So if we will give `grid-auto-flow` as `column` here, does that mean extra eleme
 	grid-auto-flow: column;
 ```
 ![](/WebDev/ss11.png)
+
+
+### fractional units with grid-template
+
+As we know fractional units can be used to tell the size of column width or row height w.r.t the space available in the container. 
+
+```CSS
+	display: grid; /* grid layout */
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 50px 50px 50px;
+	grid-auto-flow: column;
+```
+In the code above, we have mentioned 3 values in grid-template-columns that means we expect 3 columns. Each value is 1fr, 1fr represent the fractional unit of each column i.e. 1/3 of the total space.  How ?
+
+![](/WebDev/20240711192321.png)
+
+If size of the total container is 3fr, then 1fr went to first column, 1fr went to 2nd column and 1fr went to third column. 
+
+![](/WebDev/ss12.png)
+For more examples, we can refer the below:
+
+**Example 1**
+```CSS
+	display: grid; /* grid layout */
+	grid-template-columns: 1fr 2fr 2fr;
+	grid-template-rows: 50px 50px 50px;
+	grid-auto-flow: column;
+```
+Here we can total 5fr space (1 + 2 + 2) available in the container, among which the 1/5 of the space i.e. 1fr goes to column 1, then 2/5 of the space i.e. 2fr goes to second column and the last 2/5 of the space i.e. again 2fr goes to the last column.
+
+![](/WebDev/ss13.png)
+
+**Example 2**
+
+```CSS
+	display: grid; /* grid layout */
+	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-rows: 50px 50px 50px;
+	grid-auto-flow: column;
+```
+Here we can total 4fr space (1 + 1 + 2) available in the container, among which the 1/4 of the space i.e. 1fr goes to column 1, then 1/4 of the space i.e. 1fr goes to second column and the last 2/4 of the space i.e. 2fr goes to the last column.
+
+![](/WebDev/ss14.png)
+
+**Example 3**
+```CSS
+	display: grid; /* grid layout */
+	grid-template-columns: 1fr 1fr 2fr 1fr;
+	grid-template-rows: 50px 50px 50px;
+	grid-auto-flow: column;
+```
+Here we can total 5fr space (1 + 1 + 2 + 1) available in the container, among which the 1/5 of the space i.e. 1fr goes to column 1, then 1/5 of the space i.e. 1fr goes to second column, then 2/5 of the space i.e.  2fr goes to the third column and remaining 1/5 goes to fourth column.
+![](/WebDev/ss15.png)
+But why the last column is empty ?
+
+It is because of the `grid-auto-flow`, as it is equal to `column` the filling of grid cells happen in column fashion i.e. all extra values goes to next column.
+Now beyond 7 and 8 we don't have enough items to fill the space, but because we have mentioned the spacing of 4 columns, the last column stays empty but also keeps it's size entact, just because we have mentioned the size of the column manually as 1fr. 
+
+**Example 3**
+```CSS
+	display: grid; /* grid layout */
+	grid-template-columns: 1fr 1fr 2fr 1fr;
+```
+Here we can total 5fr space (1 + 1 + 2 + 1) available in the container, among which the 1/5 of the space i.e. 1fr goes to column 1, then 1/5 of the space i.e. 1fr goes to second column, then 2/5 of the space i.e.  2fr goes to the third column and remaining 1/5 goes to fourth column.
+
+![](/WebDev/ss16.png)
+
+Here the `grid-auto-flow` is row, so all the elements are first filled in the row 1 and all extra moves to next row, hence no empty columns. 
+
+So this was it for the basics of CSS grids. In the further upcoming set of parts, we will talk about more intermediate and advanced concepts related to CSS grids
+
