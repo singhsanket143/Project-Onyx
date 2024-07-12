@@ -1,0 +1,43 @@
+# Compiled VS Interpreted Languages
+
+## Introduction
+In the world of programming languages, there are many languages that are used for different purposes.
+Most of the languages are divided into two categories:
+- Compiled language
+- Interpreted language
+
+The question that should come to your mind is, whether JS is compiled or interpreted ? 
+To understand this let's take a deeper dive into compilation and interpretation.
+
+## Compiled Languages
+Example of compiled languages are: **C** , **C++** etc. 
+To run the code of any compiled programming language we need to use another software called as Compiler. 
+
+Compiler takes the whole code, analyses it for errors, if there are no errors then it will give us an executable binary, but if there is any single error, then nothing will be added to the executable, in fact no executable will be made and compiler will throw the errors which are present in the code.
+
+Interesting fact is that all the errors are told at once. 
+If let's say the first 100 lines of code are correct and the 101th line has an issue, still nothing will be executed.
+
+![](/WebDev/20240711211758.png)
+## Interpreted Languages
+
+Pure interpreted languages exist for example: `Bash`
+
+These are those languages, which execute our code directly, without reading / analysing the whole code prior. They execute code line by line, if any line has an error, then everything before it gets properly executed and the moment we detect the first error, execution stops.
+If there is more code, after the error, nothing is executed post we encounter the error. 
+
+```bash
+echo "hello world"
+ls -l
+# excho 'hello world"";
+echo "hello world"
+```
+
+![](/WebDev/ss17.png)
+
+
+## Hybrid Languages
+
+There is kind of like a third category of languages which uses both compilation and interpretation for the final execution of code. Ex: **Java**, **JS**, **Python**, etc
+
+![](/WebDev/20240711215251.png)
